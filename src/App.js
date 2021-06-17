@@ -13,12 +13,12 @@ import ImagePicker from 'react-native-image-crop-picker';
 
 import testString from './assets/testString';
 
-//import * as tf from '@tensorflow/tfjs';
-//import '@tensorflow/tfjs-react-native';
+import * as tf from '@tensorflow/tfjs';
+import '@tensorflow/tfjs-react-native';
 
 const App = () => {
     // State to indicate if TensorFlow.js finished loading
-    /*const [tfReady, setTfReady] = useState(false);
+    const [tfReady, setTfReady] = useState(false);
 
     const makeTfReady = async () => {
         await tf.ready();
@@ -36,7 +36,7 @@ const App = () => {
         try {
             //const modelJson = Asset.fromModule();
 
-            const model = await tf.loadLayersModel('https://skinsafe-melanoma.s3.us-west-1.amazonaws.com/melanoma_model.json');
+            const model = await tf.loadLayersModel(require('./assets/model.json'));
 
             console.log('model loaded');
 
@@ -46,7 +46,7 @@ const App = () => {
         } catch (err) {
             console.error('ERROR: ' + err);
         }
-    };*/
+    };
 
     const openPhotos = () => {
         ImagePicker.openPicker({
@@ -86,9 +86,9 @@ const App = () => {
             <StatusBar barStyle="dark-content" />
             <SafeAreaView>
                 <Text>hi i'm melganoma</Text>
-                <TouchableOpacity style={{ marginTop: 10, padding: 5, backgroundColor: 'yellow' }}>
+                <TouchableOpacity onPress={runPrediction} style={{ marginTop: 10, padding: 5, backgroundColor: 'yellow' }}>
                     <Text>
-                        Click me to predict... (ADD onPRESS!)
+                        Click me to predict...
                     </Text>
                 </TouchableOpacity>
 
