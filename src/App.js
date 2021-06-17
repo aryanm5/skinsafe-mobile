@@ -8,6 +8,8 @@ import {
     StatusBar,
     TouchableOpacity
 } from 'react-native';
+import ImagePicker from 'react-native-image-crop-picker';
+
 
 import testString from './assets/testString';
 
@@ -46,14 +48,59 @@ const App = () => {
         }
     };*/
 
+    const openPhotos = () => {
+        ImagePicker.openPicker({
+            width: 100,
+            height: 100,
+            cropping: true,
+            writeTempFile: false,
+            includeBase64: true,
+            mediaType: 'photo',
+            smartAlbums: ['UserLibrary', 'PhotoStream', 'Panoramas', 'Bursts'],
+            compressImageMaxWidth: 100,
+            compressImageMaxHeight: 100,
+            loadingLabelText: 'Processing...',
+        }).then(image => {
+            console.log(image);
+        });
+    };
+    const openCamera = () => {
+        ImagePicker.openCamera({
+            width: 100,
+            height: 100,
+            cropping: true,
+            writeTempFile: false,
+            includeBase64: true,
+            mediaType: 'photo',
+            smartAlbums: ['UserLibrary', 'PhotoStream', 'Panoramas', 'Bursts'],
+            compressImageMaxWidth: 100,
+            compressImageMaxHeight: 100,
+            loadingLabelText: 'Processing...',
+        }).then(image => {
+            console.log(image);
+        });
+    };
+
     return (
         <>
             <StatusBar barStyle="dark-content" />
             <SafeAreaView>
-                <Text>hi i'm meloneramo</Text>
-                <TouchableOpacity  style={{ marginTop: 10, padding: 5, backgroundColor: 'yellow' }}>
+                <Text>hi i'm melganoma</Text>
+                <TouchableOpacity style={{ marginTop: 10, padding: 5, backgroundColor: 'yellow' }}>
                     <Text>
                         Click me to predict... (ADD onPRESS!)
+                    </Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity onPress={openPhotos} style={{ marginTop: 10, padding: 5, backgroundColor: 'yellow' }}>
+                    <Text>
+                        open photos
+                    </Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity onPress={openCamera} style={{ marginTop: 10, padding: 5, backgroundColor: 'yellow' }}>
+                    <Text>
+                        open camera
                     </Text>
                 </TouchableOpacity>
             </SafeAreaView>

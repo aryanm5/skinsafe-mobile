@@ -11,8 +11,6 @@
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.8.0",
-    "@react-native-community/masked-view": "^0.1.11",
-    "@react-navigation/native": "^5.9.4",
     "@react-navigation/stack": "^5.14.5",
     "@tensorflow/tfjs": "^1.5.2",
     "@tensorflow/tfjs-react-native": "^0.2.3",
@@ -22,11 +20,7 @@
     "react": "16.9.0",
     "react-native": "0.61.5",
     "react-native-fs": "^2.16.6",
-    "react-native-gesture-handler": "^1.10.3",
     "react-native-image-crop-picker": "^0.36.2",
-    "react-native-reanimated": "^2.2.0",
-    "react-native-safe-area-context": "^3.2.0",
-    "react-native-screens": "^3.3.0",
     "react-native-unimodules": "^0.7.0"
   },
   "devDependencies": {
