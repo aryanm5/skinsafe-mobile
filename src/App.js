@@ -7,11 +7,10 @@ import {
     Text,
     StatusBar,
     TouchableOpacity,
+    InteractionManager
 } from 'react-native';
 import ImagePicker from 'react-native-image-crop-picker';
 import PixelColor from 'react-native-pixel-color';
-
-
 import * as tf from '@tensorflow/tfjs';
 import * as tfrn from '@tensorflow/tfjs-react-native';
 
@@ -37,18 +36,12 @@ async function pixelGetter(path, callback) {
         console.log(x);
         for (let y = 0; y < 100; ++y) {
             if (y === 0) { outputObj[x][y] = []; }
-            PixelColor.getHex(path, { x, y: y }).then((color) => {
+            PixelColor.getHex(path, { x, y: y === 0 ? 1 : y }).then((color) => {
                 const rgb = hexToRgb(color);
                 outputObj[x][y] = [rgb.r, rgb.g, rgb.b];
                 numReady++;
                 if (numReady === 10000) {
                     console.log('numReady is 10000!');
-                    /*outputObj.forEach(yrow => {
-                        yrow.forEach(pixel => {
-                            output.push(...pixel);
-                        });
-                    });*/
-
                     callback(outputObj);
                 }
             }).catch((err) => {
@@ -60,7 +53,6 @@ async function pixelGetter(path, callback) {
 }
 
 const App = () => {
-    // State to indicate if TensorFlow.js finished loading
     const [tfReady, setTfReady] = useState(false);
 
     const makeTfReady = async () => {
@@ -72,38 +64,39 @@ const App = () => {
         makeTfReady();
     }, []);
 
-    const runPrediction = async (path) => {
-        console.log('about tto predict');
-        const CATEGORIES = ['Melanoma', 'NotMelanoma'];
-
-        try {
-            const modelJson = require('./assets/model.json');
-            const modelWeights = require('./assets/weights.bin');
-
-            const model = await tf.loadLayersModel(tfrn.bundleResourceIO(modelJson, modelWeights));
-
-            console.log('model loaded');
-
-            pixelGetter(path, array => {
-                console.log('RAW ARRAY: ' + JSON.stringify(array));
-                const tensor = tf.tensor([array]);
-                console.log('TENSOR BEFORE RESIZE:');
-                tensor.print();
-                //const resized = tensor.reshape([-1, 100, 100, 3]);
-                //console.log('TENSOR AFTER RESIZE:');
-                //resized.print();
-
-                model.predict(tensor).array()
-                    .then(output => {
-                        const result = CATEGORIES[output];
-                        console.log('PREDICTION: ' + result);
-                        alert('The image is ' + result + '!');
-                    })
-                    .catch(err => console.error('PREDICT ERROR: ' + err));
-            });
-        } catch (err) {
-            console.error('ERROR: ' + err);
-        }
+    const runPrediction = path => {
+        InteractionManager.runAfterInteractions(async () => {
+            console.log('about tto predict');
+            const CATEGORIES = ['NotMelanoma', 'Melanoma'];
+    
+            try {
+                const modelJson = require('./assets/model.json');
+                const modelWeights = require('./assets/weights.bin');
+    
+                const model = await tf.loadLayersModel(tfrn.bundleResourceIO(modelJson, modelWeights));
+    
+                console.log('model loaded');
+    
+                pixelGetter(path, array => {
+                    const tensor = tf.tensor([array]);
+                    //const resized = tensor.reshape([-1, 100, 100, 3]);
+                    //console.log('TENSOR AFTER RESIZE:');
+                    //resized.print();
+    
+                    const resultTensor = model.predict(tensor);
+                    resultTensor.array()
+                        .then(output => {
+                            const result = CATEGORIES[output];
+                            console.log('RAW OUTPUT: ' + JSON.stringify(output));
+                            console.log('PREDICTION: ' + result);
+                            alert('The image is ' + result + '!');
+                        })
+                        .catch(err => console.error('PREDICT ERROR: ' + err));
+                });
+            } catch (err) {
+                console.error('ERROR: ' + err);
+            }
+        });
     };
 
     const openPhotos = () => {
