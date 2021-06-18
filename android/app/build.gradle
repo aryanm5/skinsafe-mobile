@@ -182,6 +182,8 @@ android {
 }
 
 dependencies {
+    implementation project(':react-native-pixel-color')
+    implementation project(':react-native-get-pixel')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.facebook.react:react-native:+"  // From node_modules
 

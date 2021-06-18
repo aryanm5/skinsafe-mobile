@@ -12,14 +12,14 @@
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		21F0DF2CC5C0267B5F20D0BC /* libPods-SkinSafeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 64570FAD0E9BDEFE63393ED8 /* libPods-SkinSafeTests.a */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* SkinSafeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* SkinSafeTests.m */; };
-		BF8C019AE15A38835C8B4BCE /* libPods-SkinSafe-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB6E412871891063EF22F537 /* libPods-SkinSafe-tvOS.a */; };
-		C95F01496A4F5D37748A86AD /* libPods-SkinSafe-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 51A0210A7617D3D6CD15DBA1 /* libPods-SkinSafe-tvOSTests.a */; };
-		E1521BE898C0C82BF17B3E4D /* libPods-SkinSafe.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 922EAC0AF25B2407B8440900 /* libPods-SkinSafe.a */; };
+		48F0A51CA8BACB461988FA34 /* libPods-SkinSafeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FC0EA6D886434876CAE7A45 /* libPods-SkinSafeTests.a */; };
+		858E52E95755D8C850B627FD /* libPods-SkinSafe-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F4925F5D452234D20E43B1D /* libPods-SkinSafe-tvOSTests.a */; };
+		D480C8FDD2D15FB41AA881C9 /* libPods-SkinSafe-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 637E5A68BE91B2EF8695DEA6 /* libPods-SkinSafe-tvOS.a */; };
+		F7C313B27F1FE579DC244D76 /* libPods-SkinSafe.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 083D0101648DEDCA608964B2 /* libPods-SkinSafe.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +44,7 @@
 		00E356EE1AD99517003FC87E /* SkinSafeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkinSafeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* SkinSafeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkinSafeTests.m; sourceTree = "<group>"; };
+		083D0101648DEDCA608964B2 /* libPods-SkinSafe.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SkinSafe.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* SkinSafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkinSafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = SkinSafe/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = SkinSafe/AppDelegate.m; sourceTree = "<group>"; };
@@ -51,22 +52,22 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SkinSafe/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SkinSafe/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = SkinSafe/main.m; sourceTree = "<group>"; };
-		25DFCAC03D10B32355C81E0E /* Pods-SkinSafeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkinSafeTests.release.xcconfig"; path = "Target Support Files/Pods-SkinSafeTests/Pods-SkinSafeTests.release.xcconfig"; sourceTree = "<group>"; };
+		2925EF98A3B50FCB92770CC8 /* Pods-SkinSafe-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkinSafe-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-SkinSafe-tvOSTests/Pods-SkinSafe-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* SkinSafe-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SkinSafe-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* SkinSafe-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SkinSafe-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2E63B2EF7EBC7AB433C5F917 /* Pods-SkinSafe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkinSafe.release.xcconfig"; path = "Target Support Files/Pods-SkinSafe/Pods-SkinSafe.release.xcconfig"; sourceTree = "<group>"; };
-		34B377BBAD194B9170BDBD9F /* Pods-SkinSafe-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkinSafe-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-SkinSafe-tvOS/Pods-SkinSafe-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		3F19561D4278C2CB22E83243 /* Pods-SkinSafe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkinSafe.debug.xcconfig"; path = "Target Support Files/Pods-SkinSafe/Pods-SkinSafe.debug.xcconfig"; sourceTree = "<group>"; };
-		451ADE7421E517D5CE5F6931 /* Pods-SkinSafe-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkinSafe-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-SkinSafe-tvOSTests/Pods-SkinSafe-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		51A0210A7617D3D6CD15DBA1 /* libPods-SkinSafe-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SkinSafe-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		64570FAD0E9BDEFE63393ED8 /* libPods-SkinSafeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SkinSafeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		922EAC0AF25B2407B8440900 /* libPods-SkinSafe.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SkinSafe.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		96FD9714515C2338CACCFE4C /* Pods-SkinSafe-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkinSafe-tvOS.release.xcconfig"; path = "Target Support Files/Pods-SkinSafe-tvOS/Pods-SkinSafe-tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		A1A0E459C4D1B49B42188006 /* Pods-SkinSafeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkinSafeTests.debug.xcconfig"; path = "Target Support Files/Pods-SkinSafeTests/Pods-SkinSafeTests.debug.xcconfig"; sourceTree = "<group>"; };
-		BB6E412871891063EF22F537 /* libPods-SkinSafe-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SkinSafe-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C7E30CC856E996F6AC570EEA /* Pods-SkinSafe-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkinSafe-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-SkinSafe-tvOSTests/Pods-SkinSafe-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3806148A0EAA501C2D4F2BE9 /* Pods-SkinSafe-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkinSafe-tvOS.release.xcconfig"; path = "Target Support Files/Pods-SkinSafe-tvOS/Pods-SkinSafe-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		4FC0EA6D886434876CAE7A45 /* libPods-SkinSafeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SkinSafeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		637E5A68BE91B2EF8695DEA6 /* libPods-SkinSafe-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SkinSafe-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		66607AB3BB0C7C74A6E673C0 /* Pods-SkinSafeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkinSafeTests.release.xcconfig"; path = "Target Support Files/Pods-SkinSafeTests/Pods-SkinSafeTests.release.xcconfig"; sourceTree = "<group>"; };
+		6B0FD0B98FFD44AC89E4A789 /* libRNPixelColor.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNPixelColor.a; sourceTree = "<group>"; };
+		6F4925F5D452234D20E43B1D /* libPods-SkinSafe-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SkinSafe-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		701552AC6CE9D9239FB142A5 /* Pods-SkinSafe-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkinSafe-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-SkinSafe-tvOS/Pods-SkinSafe-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		7C1E104E5AC26C6E67B34F94 /* Pods-SkinSafeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkinSafeTests.debug.xcconfig"; path = "Target Support Files/Pods-SkinSafeTests/Pods-SkinSafeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7E12CC309C1FEB92C8B7CAD5 /* Pods-SkinSafe-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkinSafe-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-SkinSafe-tvOSTests/Pods-SkinSafe-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		D82D06DA5A01330E566FCC4E /* Pods-SkinSafe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkinSafe.release.xcconfig"; path = "Target Support Files/Pods-SkinSafe/Pods-SkinSafe.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		F97ECFC69C020E9183B94FAC /* Pods-SkinSafe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkinSafe.debug.xcconfig"; path = "Target Support Files/Pods-SkinSafe/Pods-SkinSafe.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21F0DF2CC5C0267B5F20D0BC /* libPods-SkinSafeTests.a in Frameworks */,
+				48F0A51CA8BACB461988FA34 /* libPods-SkinSafeTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1521BE898C0C82BF17B3E4D /* libPods-SkinSafe.a in Frameworks */,
+				F7C313B27F1FE579DC244D76 /* libPods-SkinSafe.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,7 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF8C019AE15A38835C8B4BCE /* libPods-SkinSafe-tvOS.a in Frameworks */,
+				D480C8FDD2D15FB41AA881C9 /* libPods-SkinSafe-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C95F01496A4F5D37748A86AD /* libPods-SkinSafe-tvOSTests.a in Frameworks */,
+				858E52E95755D8C850B627FD /* libPods-SkinSafe-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,14 +140,14 @@
 		1AF6DA232693E1EFACB5B76C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3F19561D4278C2CB22E83243 /* Pods-SkinSafe.debug.xcconfig */,
-				2E63B2EF7EBC7AB433C5F917 /* Pods-SkinSafe.release.xcconfig */,
-				34B377BBAD194B9170BDBD9F /* Pods-SkinSafe-tvOS.debug.xcconfig */,
-				96FD9714515C2338CACCFE4C /* Pods-SkinSafe-tvOS.release.xcconfig */,
-				C7E30CC856E996F6AC570EEA /* Pods-SkinSafe-tvOSTests.debug.xcconfig */,
-				451ADE7421E517D5CE5F6931 /* Pods-SkinSafe-tvOSTests.release.xcconfig */,
-				A1A0E459C4D1B49B42188006 /* Pods-SkinSafeTests.debug.xcconfig */,
-				25DFCAC03D10B32355C81E0E /* Pods-SkinSafeTests.release.xcconfig */,
+				F97ECFC69C020E9183B94FAC /* Pods-SkinSafe.debug.xcconfig */,
+				D82D06DA5A01330E566FCC4E /* Pods-SkinSafe.release.xcconfig */,
+				701552AC6CE9D9239FB142A5 /* Pods-SkinSafe-tvOS.debug.xcconfig */,
+				3806148A0EAA501C2D4F2BE9 /* Pods-SkinSafe-tvOS.release.xcconfig */,
+				2925EF98A3B50FCB92770CC8 /* Pods-SkinSafe-tvOSTests.debug.xcconfig */,
+				7E12CC309C1FEB92C8B7CAD5 /* Pods-SkinSafe-tvOSTests.release.xcconfig */,
+				7C1E104E5AC26C6E67B34F94 /* Pods-SkinSafeTests.debug.xcconfig */,
+				66607AB3BB0C7C74A6E673C0 /* Pods-SkinSafeTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -156,12 +157,20 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				922EAC0AF25B2407B8440900 /* libPods-SkinSafe.a */,
-				BB6E412871891063EF22F537 /* libPods-SkinSafe-tvOS.a */,
-				51A0210A7617D3D6CD15DBA1 /* libPods-SkinSafe-tvOSTests.a */,
-				64570FAD0E9BDEFE63393ED8 /* libPods-SkinSafeTests.a */,
+				083D0101648DEDCA608964B2 /* libPods-SkinSafe.a */,
+				637E5A68BE91B2EF8695DEA6 /* libPods-SkinSafe-tvOS.a */,
+				6F4925F5D452234D20E43B1D /* libPods-SkinSafe-tvOSTests.a */,
+				4FC0EA6D886434876CAE7A45 /* libPods-SkinSafeTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2FCAC636267C140F004F9622 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				6B0FD0B98FFD44AC89E4A789 /* libRNPixelColor.a */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -180,6 +189,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				1AF6DA232693E1EFACB5B76C /* Pods */,
+				2FCAC636267C140F004F9622 /* Recovered References */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -204,7 +214,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "SkinSafeTests" */;
 			buildPhases = (
-				4249722AD399F1787E153FF2 /* [CP] Check Pods Manifest.lock */,
+				ABD42EB0CEB0E2AE95EB665D /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
@@ -223,13 +233,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "SkinSafe" */;
 			buildPhases = (
-				5BF1DE54E2556EA66DE84EC9 /* [CP] Check Pods Manifest.lock */,
+				9D12BEBE5A96B5C332648DB7 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				1036B044076AC8AF51369E11 /* [CP] Copy Pods Resources */,
+				2705E6D428DF514A8163F755 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -244,7 +254,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "SkinSafe-tvOS" */;
 			buildPhases = (
-				F9DEC8BBEB5FC4F3840202F1 /* [CP] Check Pods Manifest.lock */,
+				04C5A073A854BE554A71BFBA /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
 				2D02E4771E0B4A5D006451C7 /* Sources */,
 				2D02E4781E0B4A5D006451C7 /* Frameworks */,
@@ -264,7 +274,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "SkinSafe-tvOSTests" */;
 			buildPhases = (
-				7B94E2FA9BDC23CD2DA8BDC4 /* [CP] Check Pods Manifest.lock */,
+				A54455EEAFEC2A137134F732 /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
 				2D02E48D1E0B4A5D006451C7 /* Frameworks */,
 				2D02E48E1E0B4A5D006451C7 /* Resources */,
@@ -285,7 +295,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 940;
 				ORGANIZATIONNAME = Mittaldev;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -377,7 +387,29 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
-		1036B044076AC8AF51369E11 /* [CP] Copy Pods Resources */ = {
+		04C5A073A854BE554A71BFBA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SkinSafe-tvOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2705E6D428DF514A8163F755 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -411,29 +443,7 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
-		4249722AD399F1787E153FF2 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SkinSafeTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5BF1DE54E2556EA66DE84EC9 /* [CP] Check Pods Manifest.lock */ = {
+		9D12BEBE5A96B5C332648DB7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -455,7 +465,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7B94E2FA9BDC23CD2DA8BDC4 /* [CP] Check Pods Manifest.lock */ = {
+		A54455EEAFEC2A137134F732 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -477,7 +487,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F9DEC8BBEB5FC4F3840202F1 /* [CP] Check Pods Manifest.lock */ = {
+		ABD42EB0CEB0E2AE95EB665D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -492,7 +502,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SkinSafe-tvOS-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-SkinSafeTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -604,16 +614,24 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A1A0E459C4D1B49B42188006 /* Pods-SkinSafeTests.debug.xcconfig */;
+			baseConfigurationReference = 7C1E104E5AC26C6E67B34F94 /* Pods-SkinSafeTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-get-pixel/ios/PNGetPixel",
+				);
 				INFOPLIST_FILE = SkinSafeTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -627,13 +645,21 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 25DFCAC03D10B32355C81E0E /* Pods-SkinSafeTests.release.xcconfig */;
+			baseConfigurationReference = 66607AB3BB0C7C74A6E673C0 /* Pods-SkinSafeTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-get-pixel/ios/PNGetPixel",
+				);
 				INFOPLIST_FILE = SkinSafeTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -647,12 +673,16 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3F19561D4278C2CB22E83243 /* Pods-SkinSafe.debug.xcconfig */;
+			baseConfigurationReference = F97ECFC69C020E9183B94FAC /* Pods-SkinSafe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 8M9Y3FH3DC;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-get-pixel/ios/PNGetPixel",
+				);
 				INFOPLIST_FILE = SkinSafe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -668,11 +698,15 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2E63B2EF7EBC7AB433C5F917 /* Pods-SkinSafe.release.xcconfig */;
+			baseConfigurationReference = D82D06DA5A01330E566FCC4E /* Pods-SkinSafe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8M9Y3FH3DC;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-get-pixel/ios/PNGetPixel",
+				);
 				INFOPLIST_FILE = SkinSafe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -688,7 +722,7 @@
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 34B377BBAD194B9170BDBD9F /* Pods-SkinSafe-tvOS.debug.xcconfig */;
+			baseConfigurationReference = 701552AC6CE9D9239FB142A5 /* Pods-SkinSafe-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -699,8 +733,16 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-get-pixel/ios/PNGetPixel",
+				);
 				INFOPLIST_FILE = "SkinSafe-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -716,7 +758,7 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 96FD9714515C2338CACCFE4C /* Pods-SkinSafe-tvOS.release.xcconfig */;
+			baseConfigurationReference = 3806148A0EAA501C2D4F2BE9 /* Pods-SkinSafe-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -727,8 +769,16 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-get-pixel/ios/PNGetPixel",
+				);
 				INFOPLIST_FILE = "SkinSafe-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -744,7 +794,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C7E30CC856E996F6AC570EEA /* Pods-SkinSafe-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = 2925EF98A3B50FCB92770CC8 /* Pods-SkinSafe-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -754,8 +804,16 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-get-pixel/ios/PNGetPixel",
+				);
 				INFOPLIST_FILE = "SkinSafe-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -771,7 +829,7 @@
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 451ADE7421E517D5CE5F6931 /* Pods-SkinSafe-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = 7E12CC309C1FEB92C8B7CAD5 /* Pods-SkinSafe-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -781,8 +839,16 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-get-pixel/ios/PNGetPixel",
+				);
 				INFOPLIST_FILE = "SkinSafe-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",

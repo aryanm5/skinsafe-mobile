@@ -37,6 +37,8 @@ target 'SkinSafe' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
+  pod 'react-native-pixel-color', :path => '../node_modules/react-native-pixel-color'
+
   post_install do |installer|
     ## Fix for XCode 12.5
     find_and_replace("../node_modules/react-native/React/CxxBridge/RCTCxxBridge.mm",
