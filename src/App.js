@@ -30,7 +30,7 @@ const App = () => {
             {
                 view === 'landing'
                     ? <Landing tfReady={tfReady} setView={setView} />
-                    : <Predict />
+                    : <Predict setView={setView} />
             }
         </SafeAreaView>
     )

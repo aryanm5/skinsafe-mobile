@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
         fontSize: 36,
         color: '#FF0000',
         fontFamily: 'Futura',
-        marginTop: 30,
+        marginTop: 15,
     },
     description: {
         fontSize: 17,
@@ -76,11 +76,17 @@ const styles = StyleSheet.create({
         width: 150,
         height: 150,
         alignSelf: 'center',
-        //borderWidth: 1,
-    }
+    },
+    backButton: {
+        alignSelf: 'flex-start',
+        marginLeft: 5,
+    },
+    backButtonText: {
+        fontSize: 16,
+    },
 });
 
-const Predict = () => {
+const Predict = props => {
     const [base64, setBase64] = useState(null);
     const [progress, setProgress] = useState(null);
     const [stage, setStage] = useState(null);
@@ -112,8 +118,6 @@ const Predict = () => {
     const runPrediction = path => {
         setStage('Starting Engines...');
         InteractionManager.runAfterInteractions(async () => {
-            const CATEGORIES = ['Melanoma', 'NotMelanoma'];
-
             try {
                 const modelJson = require('../assets/model.json');
                 const modelWeights = require('../assets/weights.bin');
@@ -183,6 +187,11 @@ const Predict = () => {
 
     return (
         <ScrollView contentContainerStyle={styles.container}>
+            <TouchableOpacity onPress={() => props.setView('landing')} style={styles.backButton}>
+                <Text style={styles.backButtonText}>
+                    &larr; Back
+                </Text>
+            </TouchableOpacity>
             <Text style={styles.title}>SkinSafe</Text>
             <Text style={styles.description}>
                 Select an image from your Photos or Camera. Crop the image and place the mole in the center for best results.
@@ -217,13 +226,13 @@ const Predict = () => {
                     }
                     <View style={styles.logoContainer}>
                         <Image source={require('../assets/logo.png')} style={styles.logo} />
-                        <Image source={require('../assets/glass.gif')} style={styles.glass} />
+                        <Image source={require('../assets/glass.gif')} setView={props.setView} style={styles.glass} />
                     </View>
                 </>
             }
             {
                 result !== null &&
-                <Result result={result} />
+                <Result result={result} setView={props.setView} />
             }
         </ScrollView>
     );
