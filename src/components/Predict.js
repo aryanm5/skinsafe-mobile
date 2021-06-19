@@ -99,11 +99,10 @@ const Predict = () => {
                     output[x][y] = [rgb.r, rgb.g, rgb.b];
                     numReady++;
                     if (numReady === 15625) {
-                        console.log('numReady is 15625!');
                         callback(output);
                     }
                 }).catch((err) => {
-                    console.log('PIXEL GET ERROR: ' + err);
+                    console.error('PIXEL GET ERROR: ' + err);
                 });
             }
             await sleep(100);
@@ -113,7 +112,6 @@ const Predict = () => {
     const runPrediction = path => {
         setStage('Starting Engines...');
         InteractionManager.runAfterInteractions(async () => {
-            console.log('about tto predict');
             const CATEGORIES = ['Melanoma', 'NotMelanoma'];
 
             try {
@@ -135,8 +133,6 @@ const Predict = () => {
                     resultTensor.array()
                         .then(output => {
                             const result = output[0].indexOf(1);
-                            console.log('RAW OUTPUT: ' + JSON.stringify(output));
-                            console.log('PREDICTION: ' + result);
                             setStage(null);
                             setResult(result);
                         })
