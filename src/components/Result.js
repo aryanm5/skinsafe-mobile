@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -58,11 +58,11 @@ const Result = props => {
                 }
             </Text>
             <Text style={styles.followup}>
-                Keep in mind that the AI predicts your condition based on a limited amount of data. Consult a doctor before making any medical decisions.
+                Keep in mind that the AI predicts your condition and won't always be right. If you notice unusual growth on your skin, consult a doctor right away.
             </Text>
-            <TouchableOpacity onPress={() => props.setView('landing')} style={styles.button}>
+            <TouchableOpacity onPress={props.setMap} style={styles.button}>
                 <Text style={styles.buttonText}>
-                    Back
+                    View Nearby Doctors
                 </Text>
             </TouchableOpacity>
         </View>

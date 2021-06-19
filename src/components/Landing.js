@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Image, TouchableOpacity, Text } from 'react-native';
+import { StyleSheet, View, Image, TouchableOpacity, Text, SafeAreaView } from 'react-native';
 
 const styles = StyleSheet.create({
     container: {
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
 
 const Landing = props => {
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
             <Text style={styles.title}>
                 SkinSafe
             </Text>
@@ -54,7 +54,7 @@ const Landing = props => {
                     Continue
                 </Text>
             </TouchableOpacity>
-        </View>
+        </SafeAreaView>
     );
 };
 

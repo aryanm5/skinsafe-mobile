@@ -1,11 +1,12 @@
 import React, { useState, } from 'react';
-import { StyleSheet, ScrollView, View, Text, TouchableOpacity, InteractionManager, Image, Dimensions, ActivityIndicator, } from 'react-native';
+import { StyleSheet, ScrollView, View, Text, TouchableOpacity, InteractionManager, Image, Dimensions, ActivityIndicator, SafeAreaView } from 'react-native';
 import ImagePicker from 'react-native-image-crop-picker';
 import PixelColor from 'react-native-pixel-color';
 import * as tf from '@tensorflow/tfjs';
 import * as tfrn from '@tensorflow/tfjs-react-native';
 import ProgressBar from 'react-native-progress/Bar';
 import Result from './Result';
+import Map from './Map';
 
 const styles = StyleSheet.create({
     container: {
@@ -91,6 +92,7 @@ const Predict = props => {
     const [progress, setProgress] = useState(null);
     const [stage, setStage] = useState(null);
     const [result, setResult] = useState(null);
+    const [map, setMap] = useState(false);
 
     const pixelGetter = async (path, callback) => {
         let numReady = 0;
@@ -186,55 +188,59 @@ const Predict = props => {
     };
 
     return (
-        <ScrollView contentContainerStyle={styles.container}>
-            <TouchableOpacity onPress={() => props.setView('landing')} style={styles.backButton}>
-                <Text style={styles.backButtonText}>
-                    &larr; Back
-                </Text>
-            </TouchableOpacity>
-            <Text style={styles.title}>SkinSafe</Text>
-            <Text style={styles.description}>
-                Select an image from your Photos or Camera. Crop the image and place the mole in the center for best results.
-            </Text>
-            {
-                base64 === null
-                    ? <View style={styles.buttonContainer}>
-                        <TouchableOpacity onPress={openPhotos} style={styles.button}>
-                            <Text style={styles.buttonText}>
-                                Photos
-                            </Text>
-                        </TouchableOpacity>
-
-                        <TouchableOpacity onPress={openCamera} style={styles.button}>
-                            <Text style={styles.buttonText}>
-                                Camera
-                            </Text>
-                        </TouchableOpacity>
-                    </View>
-                    : <Image source={base64 === null ? '' : { uri: `data:image/jpeg;base64,${base64}` }} style={styles.image} />
-            }
-            {
-                stage !== null &&
-                <>
-                    <Text style={styles.stage}>
-                        {stage}
+        map
+            ? <Map goBack={() => setMap(false)} />
+            : <SafeAreaView style={styles.container}>
+                <ScrollView contentContainerStyle={styles.container}>
+                    <TouchableOpacity onPress={() => props.setView('landing')} style={styles.backButton}>
+                        <Text style={styles.backButtonText}>
+                            &larr; Back
+                        </Text>
+                    </TouchableOpacity>
+                    <Text style={styles.title}>SkinSafe</Text>
+                    <Text style={styles.description}>
+                        Select an image from your Photos or Camera. Crop the image and place the mole in the center for best results.
                     </Text>
                     {
-                        progress === null
-                            ? <ActivityIndicator size='large' color='#FF0000' style={styles.progress} />
-                            : <ProgressBar progress={progress} color='#FF0000' useNativeDriver width={Dimensions.get('window').width * 0.8} style={styles.progress} />
+                        base64 === null
+                            ? <View style={styles.buttonContainer}>
+                                <TouchableOpacity onPress={openPhotos} style={styles.button}>
+                                    <Text style={styles.buttonText}>
+                                        Photos
+                                    </Text>
+                                </TouchableOpacity>
+
+                                <TouchableOpacity onPress={openCamera} style={styles.button}>
+                                    <Text style={styles.buttonText}>
+                                        Camera
+                                    </Text>
+                                </TouchableOpacity>
+                            </View>
+                            : <Image source={base64 === null ? '' : { uri: `data:image/jpeg;base64,${base64}` }} style={styles.image} />
                     }
-                    <View style={styles.logoContainer}>
-                        <Image source={require('../assets/logo.png')} style={styles.logo} />
-                        <Image source={require('../assets/glass.gif')} setView={props.setView} style={styles.glass} />
-                    </View>
-                </>
-            }
-            {
-                result !== null &&
-                <Result result={result} setView={props.setView} />
-            }
-        </ScrollView>
+                    {
+                        stage !== null &&
+                        <>
+                            <Text style={styles.stage}>
+                                {stage}
+                            </Text>
+                            {
+                                progress === null
+                                    ? <ActivityIndicator size='large' color='#FF0000' style={styles.progress} />
+                                    : <ProgressBar progress={progress} color='#FF0000' useNativeDriver width={Dimensions.get('window').width * 0.8} style={styles.progress} />
+                            }
+                            <View style={styles.logoContainer}>
+                                <Image source={require('../assets/logo.png')} style={styles.logo} />
+                                <Image source={require('../assets/glass.gif')} setView={props.setView} style={styles.glass} />
+                            </View>
+                        </>
+                    }
+                    {
+                        result !== null &&
+                        <Result result={result} setView={props.setView} setMap={() => setMap(true)} />
+                    }
+                </ScrollView>
+            </SafeAreaView>
     );
 };
 

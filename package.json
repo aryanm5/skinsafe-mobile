@@ -20,6 +20,7 @@
     "react-native": "0.61.5",
     "react-native-fs": "^2.16.6",
     "react-native-image-crop-picker": "^0.36.2",
+    "react-native-maps": "^0.28.0",
     "react-native-pixel-color": "^0.0.5",
     "react-native-progress": "^4.1.2",
     "react-native-unimodules": "^0.7.0"

@@ -25,14 +25,14 @@ const App = () => {
     }, []);
 
     return (
-        <SafeAreaView style={styles.container}>
+        <View style={styles.container}>
             <StatusBar barStyle='dark-content' />
             {
                 view === 'landing'
                     ? <Landing tfReady={tfReady} setView={setView} />
                     : <Predict setView={setView} />
             }
-        </SafeAreaView>
+        </View>
     )
 };
 
