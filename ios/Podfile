@@ -47,6 +47,14 @@ target 'SkinSafe' do
         "RCTBridgeModuleNameForClass(module))", "RCTBridgeModuleNameForClass(Class(module)))")
   end
 
+  pre_install do |installer|
+    puts("Image fix for ios14: remove this when upgradeing to >= 0.63.3")
+    find = "_currentFrame.CGImage;"
+    replace = "_currentFrame.CGImage ;} else { [super displayLayer:layer];"
+    op = `sed -ie "s/#{find}/#{replace}/" ../node_modules/react-native/Libraries/Image/RCTUIImageViewAnimated.m`
+    puts("Image fix for ios14 done")
+  end
+
   target 'SkinSafeTests' do
     inherit! :search_paths
     # Pods for testing

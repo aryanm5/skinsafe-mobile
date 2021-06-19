@@ -20,7 +20,7 @@ module.exports = {
     }),
   },
   resolver: {
-    assetExts: [...defaultAssetExts, 'png', 'bin', 'json', 'h5'],
+    assetExts: [...defaultAssetExts, 'png', 'bin', 'json'],
     blacklistRE: blacklist([/platform_node/]),
   },
 };
