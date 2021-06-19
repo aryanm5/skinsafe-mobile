@@ -1,67 +1,117 @@
-import React, { useState, useEffect } from 'react';
-import {
-    SafeAreaView,
-    StyleSheet,
-    ScrollView,
-    View,
-    Text,
-    StatusBar,
-    TouchableOpacity,
-    InteractionManager,
-    Image
-} from 'react-native';
+import React, { useState, } from 'react';
+import { StyleSheet, ScrollView, View, Text, TouchableOpacity, InteractionManager, Image, Dimensions, ActivityIndicator, } from 'react-native';
 import ImagePicker from 'react-native-image-crop-picker';
 import PixelColor from 'react-native-pixel-color';
 import * as tf from '@tensorflow/tfjs';
 import * as tfrn from '@tensorflow/tfjs-react-native';
+import ProgressBar from 'react-native-progress/Bar';
+import Result from './Result';
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'center',
     },
     buttonContainer: {
-        flexDirection: 'row',
-        marginTop: 10,
+        marginTop: 0,
+        width: '100%',
+        justifyContent: 'space-evenly',
+        height: 250,
+        width: 250,
     },
     button: {
-        padding: 10,
-        paddingHorizontal: 15,
+        paddingVertical: 15,
+        paddingHorizontal: 10,
         borderRadius: 10,
         backgroundColor: '#FF0000',
-        marginHorizontal: 20,
-        minWidth: 100,
-        alignItems: 'center'
+        minWidth: 150,
+        alignItems: 'center',
     },
     buttonText: {
         color: '#FFF',
+        fontSize: 18,
     },
     title: {
         fontSize: 36,
         color: '#FF0000',
         fontFamily: 'Futura',
-        marginTop: -60,
+        marginTop: 30,
     },
     description: {
-        fontSize: 16,
+        fontSize: 17,
         color: '#FF0000',
         textAlign: 'center',
         marginTop: 5,
-        maxWidth: '90%'
+        maxWidth: '90%',
+        marginBottom: 20,
     },
     image: {
         width: 250,
         height: 250,
         borderWidth: StyleSheet.hairlineWidth,
-        marginVertical: 30,
+        marginTop: 0,
+        marginBottom: 50,
+    },
+    stage: {
+        marginTop: 30,
+        fontSize: 16,
+    },
+    progress: {
+        marginTop: 10,
+    },
+    logoContainer: {
+        marginTop: 40,
+        position: 'relative',
+        minWidth: 200,
+        minHeight: 200,
+        justifyContent: 'center'
+    },
+    logo: {
+        width: 200,
+        height: 200,
+        position: 'absolute',
+        top: 0,
+    },
+    glass: {
+        width: 150,
+        height: 150,
+        alignSelf: 'center',
+        //borderWidth: 1,
     }
 });
 
 const Predict = () => {
     const [base64, setBase64] = useState(null);
+    const [progress, setProgress] = useState(null);
+    const [stage, setStage] = useState(null);
+    const [result, setResult] = useState(null);
+
+    const pixelGetter = async (path, callback) => {
+        let numReady = 0;
+        let output = [];
+        for (let x = 0; x < 125; ++x) {
+            setProgress(x / 124);
+            output[x] = [];
+            for (let y = 0; y < 125; ++y) {
+                if (y === 0) { output[x][y] = []; }
+                PixelColor.getHex(path, { x, y: y === 0 ? 1 : y }).then((color) => {
+                    const rgb = hexToRgb(color);
+                    output[x][y] = [rgb.r, rgb.g, rgb.b];
+                    numReady++;
+                    if (numReady === 15625) {
+                        console.log('numReady is 15625!');
+                        callback(output);
+                    }
+                }).catch((err) => {
+                    console.log('PIXEL GET ERROR: ' + err);
+                });
+            }
+            await sleep(100);
+        }
+    };
 
     const runPrediction = path => {
+        setStage('Starting Engines...');
         InteractionManager.runAfterInteractions(async () => {
             console.log('about tto predict');
             const CATEGORIES = ['Melanoma', 'NotMelanoma'];
@@ -72,18 +122,23 @@ const Predict = () => {
 
                 const model = await tf.loadLayersModel(tfrn.bundleResourceIO(modelJson, modelWeights));
 
-                console.log('model loaded');
+                setStage('Analyzing Image...');
+                setProgress(null);
 
-                pixelGetter(path, array => {
+                pixelGetter(path, async array => {
+                    setStage('Verifying Results...');
+                    setProgress(null);
+                    await sleep(100);
                     const tensor = tf.tensor([array]);
 
                     const resultTensor = model.predict(tensor);
                     resultTensor.array()
                         .then(output => {
-                            const result = CATEGORIES[output];
+                            const result = output[0].indexOf(1);
                             console.log('RAW OUTPUT: ' + JSON.stringify(output));
                             console.log('PREDICTION: ' + result);
-                            alert('The image is ' + result + '!');
+                            setStage(null);
+                            setResult(result);
                         })
                         .catch(err => console.error('PREDICT ERROR: ' + err));
                 });
@@ -108,8 +163,7 @@ const Predict = () => {
             loadingLabelText: 'Processing...',
         }).then(image => {
             setBase64(image.data);
-            console.log(image.data);
-            //setTimeout(() => runPrediction(image.path), 100);
+            setTimeout(() => runPrediction(image.path), 100);
         });
     };
     const openCamera = () => {
@@ -127,35 +181,55 @@ const Predict = () => {
             loadingLabelText: 'Processing...',
         }).then(image => {
             setBase64(image.data);
-            console.log(image.data);
             setTimeout(() => runPrediction(image.path), 100);
         });
     };
 
     return (
-        <View style={styles.container}>
+        <ScrollView contentContainerStyle={styles.container}>
             <Text style={styles.title}>SkinSafe</Text>
             <Text style={styles.description}>
                 Select an image from your Photos or Camera. Crop the image and place the mole in the center for best results.
             </Text>
-
             {
-                <Image source={base64 === null ? '' : { uri: 'data:image/jpeg;base64,' + base64 }} style={styles.image} />
-            }
-            <View style={styles.buttonContainer}>
-                <TouchableOpacity onPress={openPhotos} style={styles.button}>
-                    <Text style={styles.buttonText}>
-                        photos
-                    </Text>
-                </TouchableOpacity>
+                base64 === null
+                    ? <View style={styles.buttonContainer}>
+                        <TouchableOpacity onPress={openPhotos} style={styles.button}>
+                            <Text style={styles.buttonText}>
+                                Photos
+                            </Text>
+                        </TouchableOpacity>
 
-                <TouchableOpacity onPress={openCamera} style={styles.button}>
-                    <Text style={styles.buttonText}>
-                        camera
+                        <TouchableOpacity onPress={openCamera} style={styles.button}>
+                            <Text style={styles.buttonText}>
+                                Camera
+                            </Text>
+                        </TouchableOpacity>
+                    </View>
+                    : <Image source={base64 === null ? '' : { uri: `data:image/jpeg;base64,${base64}` }} style={styles.image} />
+            }
+            {
+                stage !== null &&
+                <>
+                    <Text style={styles.stage}>
+                        {stage}
                     </Text>
-                </TouchableOpacity>
-            </View>
-        </View>
+                    {
+                        progress === null
+                            ? <ActivityIndicator size='large' color='#FF0000' style={styles.progress} />
+                            : <ProgressBar progress={progress} color='#FF0000' useNativeDriver width={Dimensions.get('window').width * 0.8} style={styles.progress} />
+                    }
+                    <View style={styles.logoContainer}>
+                        <Image source={require('../assets/logo.png')} style={styles.logo} />
+                        <Image source={require('../assets/glass.gif')} style={styles.glass} />
+                    </View>
+                </>
+            }
+            {
+                result !== null &&
+                <Result result={result} />
+            }
+        </ScrollView>
     );
 };
 
@@ -170,30 +244,6 @@ function hexToRgb(hex) {
         g: parseInt(result[2], 16),
         b: parseInt(result[3], 16)
     } : null;
-}
-
-async function pixelGetter(path, callback) {
-    let numReady = 0;
-    let output = [];
-    for (let x = 0; x < 125; ++x) {
-        output[x] = [];
-        console.log(x);
-        for (let y = 0; y < 125; ++y) {
-            if (y === 0) { output[x][y] = []; }
-            PixelColor.getHex(path, { x, y: y === 0 ? 1 : y }).then((color) => {
-                const rgb = hexToRgb(color);
-                output[x][y] = [rgb.r, rgb.g, rgb.b];
-                numReady++;
-                if (numReady === 15625) {
-                    console.log('numReady is 15625!');
-                    callback(output);
-                }
-            }).catch((err) => {
-                console.log('PIXEL GET ERROR: ' + err);
-            });
-        }
-        await sleep(100);
-    }
 }
 
 export default Predict;
