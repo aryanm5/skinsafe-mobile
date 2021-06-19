@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, View, Image, TouchableOpacity, Text, SafeAreaView } from 'react-native';
+import Info from './Info';
 
 const styles = StyleSheet.create({
     container: {
@@ -36,25 +37,43 @@ const styles = StyleSheet.create({
         width: 300,
         height: 300,
         marginTop: 40,
-    }
+    },
+    info: {
+        position: 'absolute',
+        top: 45,
+        right: -10,
+    },
+    infoText: {
+        fontSize: 20,
+        fontWeight: 'bold',
+    },
 });
 
 const Landing = props => {
+    const [info, setInfo] = useState(false);
+
     return (
-        <SafeAreaView style={styles.container}>
-            <Text style={styles.title}>
-                SkinSafe
-            </Text>
-            <Text style={styles.description}>
-                A melanoma detection app to help users be proactive about their skin health.
-            </Text>
-            <Image source={require('../assets/logo.png')} style={styles.image} />
-            <TouchableOpacity disabled={!props.tfReady} onPress={() => props.setView('predict')} style={styles.button}>
-                <Text style={styles.buttonText}>
-                    Continue
+        info
+            ? <Info goBack={() => setInfo(false)} />
+            : <SafeAreaView style={styles.container}>
+                <Text style={styles.title}>
+                    SkinSafe
                 </Text>
-            </TouchableOpacity>
-        </SafeAreaView>
+                <Text style={styles.description}>
+                    Eradicating melanoma, one mole at a time.
+                </Text>
+                <Image source={require('../assets/logo.png')} style={styles.image} />
+                <TouchableOpacity disabled={!props.tfReady} onPress={() => props.setView('predict')} style={styles.button}>
+                    <Text style={styles.buttonText}>
+                        Continue
+                    </Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => setInfo(true)} style={styles.info}>
+                    <Text style={styles.infoText}>
+                        &#9432;
+                    </Text>
+                </TouchableOpacity>
+            </SafeAreaView>
     );
 };
 
