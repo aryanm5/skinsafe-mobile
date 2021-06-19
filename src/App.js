@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, SafeAreaView, StatusBar, View, } from 'react-native';
+import { StyleSheet, StatusBar, View, } from 'react-native';
 import Landing from './components/Landing';
 import Predict from './components/Predict';
 import * as tf from '@tensorflow/tfjs';

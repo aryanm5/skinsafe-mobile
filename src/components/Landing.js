@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Image, TouchableOpacity, Text, SafeAreaView } from 'react-native';
+import { StyleSheet, Image, TouchableOpacity, Text, SafeAreaView } from 'react-native';
 import Info from './Info';
 
 const styles = StyleSheet.create({
