@@ -3,10 +3,10 @@ import { StyleSheet, ScrollView, TouchableOpacity, Text, SafeAreaView } from 're
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
         alignItems: 'center',
-        height: '100%',
+        //height: '100%',
         paddingTop: 10,
+        paddingBottom: 10,
     },
     title: {
         fontSize: 36,

@@ -10,7 +10,6 @@ import Map from './Map';
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
         alignItems: 'center',
     },
     buttonContainer: {
@@ -192,6 +191,7 @@ const Predict = props => {
             ? <Map goBack={() => setMap(false)} />
             : <SafeAreaView style={styles.container}>
                 <ScrollView contentContainerStyle={styles.container}>
+
                     <TouchableOpacity onPress={() => props.setView('landing')} style={styles.backButton}>
                         <Text style={styles.backButtonText}>
                             &larr; Back
@@ -239,8 +239,10 @@ const Predict = props => {
                         result !== null &&
                         <Result result={result} setView={props.setView} setMap={() => setMap(true)} />
                     }
+
                 </ScrollView>
             </SafeAreaView>
+
     );
 };
 
