@@ -97,7 +97,7 @@ const Map = props => {
                 }}
             >
                 {
-                    coords.map(c => <Marker coordinate={{ latitude: c[0], longitude: c[1] }} title={c[2]} description={c[3]} />)
+                    coords.map(c => <Marker key={`${c[0]} ${c[1]}`} coordinate={{ latitude: c[0], longitude: c[1] }} title={c[2]} description={c[3]} />)
                 }
             </MapView>
             <TouchableOpacity onPress={props.goBack} style={styles.back}>
