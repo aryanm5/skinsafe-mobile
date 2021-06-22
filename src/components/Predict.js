@@ -191,16 +191,18 @@ const Predict = props => {
             ? <Map goBack={() => setMap(false)} />
             : <SafeAreaView style={styles.container}>
                 <ScrollView contentContainerStyle={styles.container}>
-
                     <TouchableOpacity onPress={() => props.setView('landing')} style={styles.backButton}>
                         <Text style={styles.backButtonText}>
                             &larr; Back
                         </Text>
                     </TouchableOpacity>
                     <Text style={styles.title}>SkinSafe</Text>
-                    <Text style={styles.description}>
-                        Select an image from your Photos or Camera. Crop the image and place the mole in the center for best results.
-                    </Text>
+                    {
+                        result === null &&
+                        <Text style={styles.description}>
+                            Select an image from your Photos or Camera. Crop the image and place the mole in the center for best results.
+                        </Text>
+                    }
                     {
                         base64 === null
                             ? <View style={styles.buttonContainer}>

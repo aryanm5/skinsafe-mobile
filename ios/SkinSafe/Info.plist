@@ -27,16 +27,19 @@
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
-		<false/>
+		<true/>
 		<key>NSExceptionDomains</key>
-		<dict/>
+		<dict>
+			<key>localhost</key>
+			<string></string>
+		</dict>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>Allow $(PRODUCT_NAME) to use the camera.</string>
+	<string>$(PRODUCT_NAME) uses the camera to scan your mole.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Your location is required to locate nearby doctors.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Allow $(PRODUCT_NAME) to access your photos.</string>
+	<string>$(PRODUCT_NAME) uses your Photo Library to scan your photo for melanoma.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen.xib</string>
 	<key>UIRequiredDeviceCapabilities</key>

@@ -1,10 +1,9 @@
 import React from 'react';
-import { StyleSheet, ScrollView, TouchableOpacity, Text, SafeAreaView } from 'react-native';
+import { StyleSheet, ScrollView, TouchableOpacity, Text, SafeAreaView, Linking } from 'react-native';
 
 const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
-        //height: '100%',
         paddingTop: 10,
         paddingBottom: 10,
     },
@@ -32,6 +31,14 @@ const styles = StyleSheet.create({
     bold: {
         fontWeight: 'bold',
     },
+    source: {
+        alignSelf: 'center',
+    },
+    linkText: {
+        color: '#0000FF',
+        fontSize: 18,
+        textAlign: 'center',
+    },
 });
 
 const Info = props => {
@@ -55,6 +62,14 @@ const Info = props => {
                 <Text style={styles.description}>
                     Approximately <Text style={styles.bold}>2.3 percent</Text> of men and women will be diagnosed with melanoma of the skin at some point during their lifetime, based on 2016–2018 data.
                 </Text>
+                <Text style={styles.description}>
+                    Source: Melanoma of the Skin - Cancer Stat Facts. SEER. (n.d.).
+                </Text>
+                <TouchableOpacity style={styles.source} onPress={() => Linking.openURL('https://seer.cancer.gov/statfacts/html/melan.html')}>
+                    <Text style={styles.linkText}>
+                        https://seer.cancer.gov/statfacts/html/melan.html.
+                    </Text>
+                </TouchableOpacity>
                 <Text style={styles.title}>
                     How do we help?
                 </Text>

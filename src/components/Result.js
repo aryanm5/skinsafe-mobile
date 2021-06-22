@@ -1,10 +1,11 @@
 import React from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, Linking, } from 'react-native';
 
 const styles = StyleSheet.create({
     container: {
         width: '95%',
-        alignItems: 'center'
+        alignItems: 'center',
+        marginTop: -20,
     },
     resultText: {
         fontSize: 18,
@@ -28,11 +29,19 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10,
         paddingVertical: 15,
         marginTop: 30,
-        marginBottom: 10,
     },
     buttonText: {
         color: '#FFF',
         fontSize: 18,
+    },
+    source: {
+        alignSelf: 'center',
+        marginBottom: 10,
+    },
+    linkText: {
+        color: '#0000FF',
+        fontSize: 18,
+        textAlign: 'center',
     },
 });
 
@@ -64,6 +73,14 @@ const Result = props => {
             <TouchableOpacity onPress={props.setMap} style={styles.button}>
                 <Text style={styles.buttonText}>
                     View Nearby Doctors
+                </Text>
+            </TouchableOpacity>
+            <Text style={styles.followup}>
+                Source: Signs of Melanoma Skin Cancer: Symptoms of Melanoma. American Cancer Society. (n.d.).
+            </Text>
+            <TouchableOpacity style={styles.source} onPress={() => Linking.openURL('https://seer.cancer.gov/statfacts/html/melan.html')}>
+                <Text style={styles.linkText}>
+                    https://www.cancer.org/cancer/melanoma-skin-cancer/detection-diagnosis-staging/signs-and-symptoms.html.
                 </Text>
             </TouchableOpacity>
         </View>
